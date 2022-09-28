@@ -168,7 +168,7 @@ export class SmartContractFactory {
   public static Staking(chainId: number)  {
     return {
       abi:Staking.abi as AbiItem [],
-      address: SmartContractFactory.Addresses(chainId).staking // '0x62f3d571A7DAcC00C047e58fE500ee99A98E3f63'
+      address: SmartContractFactory.Addresses(chainId).staking 
     }
   }
 
