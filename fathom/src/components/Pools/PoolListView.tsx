@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import { Paper, Typography } from "@mui/material";
 import CustomizedDialogs from "../Positions/OpenNewPositionDialog";
 import ICollatralPool from "../../stores/interfaces/ICollatralPool";
-
+import StakingView from "../Staking/Staking";
 interface PoolProps {
   pool: ICollatralPool;
 }
@@ -33,6 +33,7 @@ const PoolListView = observer((props: PoolProps) => {
       <Typography component="p" variant="h4">
         {props.pool.borrowedFathom}
       </Typography>
+      <StakingView/>
       <CustomizedDialogs pool={props.pool} />
     </Paper>
   );

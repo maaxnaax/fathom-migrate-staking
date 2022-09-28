@@ -17,6 +17,7 @@ interface XdcContractMetaData {
 export class Web3Utils {
   public static web3: Web3;
   public static xdc3: Xdc3;
+  
   /**
    * We need to avoid create new instance of contract each time
    */
@@ -26,6 +27,7 @@ export class Web3Utils {
     contractMetaData: ContractMetaData | XdcContractMetaData,
     chainId: number
   ) => {
+    console.log(`getContractInstance ${chainId}`)
     /**
      * Get cache key by address and chainId
      */
@@ -131,6 +133,7 @@ export class Web3Utils {
   };
 
   public static getWeb3Instance: any = (chainId: number) => {
+    console.log(`getWeb3Instance ${chainId}`)
     if (XDC_CHAIN_IDS.includes(chainId) && Web3Utils.xdc3 instanceof Xdc3) {
       return Web3Utils.xdc3;
     } else if (Web3Utils.web3 instanceof Web3) {

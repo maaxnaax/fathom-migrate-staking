@@ -6,6 +6,9 @@ import FathomStablecoinProxyActionAbi from "./ABI/FathomStablecoinProxyActions.j
 import BEP20Abi from "./ABI/BEP20.json";
 import GetPositionsAbi from "./ABI/GetPositions.json";
 import StableSwapModule from "./ABI/StableSwapModule.json";
+import Staking from "./ABI/Staking.json";
+import StakingGetter from "./ABI/StakingGetter.json";
+import MainToken from "./ABI/MainToken.json";
 import Addresses from "./addresses.json";
 
 import Governor from './ABI/Governor.json'
@@ -158,7 +161,28 @@ export class SmartContractFactory {
   public static FathomGovernor(chainId: number)  {
     return {
       abi:Governor.abi as AbiItem [],
-      address: SmartContractFactory.Addresses(chainId) // '0x62f3d571A7DAcC00C047e58fE500ee99A98E3f63'
+      address: SmartContractFactory.Addresses(chainId).fathomGovernor // '0x62f3d571A7DAcC00C047e58fE500ee99A98E3f63'
+    }
+  }
+
+  public static Staking(chainId: number)  {
+    return {
+      abi:Staking.abi as AbiItem [],
+      address: SmartContractFactory.Addresses(chainId).staking // '0x62f3d571A7DAcC00C047e58fE500ee99A98E3f63'
+    }
+  }
+
+  public static MainToken(chainId: number)  {
+    return {
+      abi:MainToken.abi as AbiItem [],
+      address: SmartContractFactory.Addresses(chainId).mainToken // '0x62f3d571A7DAcC00C047e58fE500ee99A98E3f63'
+    }
+  }
+
+  public static StakingGetter(chainId: number)  {
+    return {
+      abi:StakingGetter.abi as AbiItem [],
+      address: SmartContractFactory.Addresses(chainId).stakingGetter // '0x62f3d571A7DAcC00C047e58fE500ee99A98E3f63'
     }
   }
 }

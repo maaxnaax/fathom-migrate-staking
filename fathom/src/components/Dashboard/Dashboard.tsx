@@ -47,8 +47,8 @@ const DashboardContent = observer(() => {
       }}
     >
       <Toolbar />
-      <AlertMessages />
-      <TransactionStatus />
+      {/* <AlertMessages />
+      <TransactionStatus /> */}
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         <Grid container spacing={3}>
           {/* Chart */}
